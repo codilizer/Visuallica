@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+  xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <!--xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension"-->
+
+  <Product Id="*"
+           Name="Visuallica (Image viewer)"
+           Language="1033"
+           Version="0.2.0.1"
+           Manufacturer="codilizer@aol.com"
+           UpgradeCode="7B6D08CD-4CA1-4E6C-B351-7919478E90F5">
+    <!--Product ID는 *로 해놓으면 컴파일할 때 자동으로 GUID로 치환됨-->
+    <!--언어코드는 http://msdn.microsoft.com/en-us/goglobal/bb964664.aspx 참고-->
+    <!--InstallerVersion은 64비트 패키지일경우 반드시 200 이상이어야 한다 -->
+    <Package InstallerVersion="200"
+             Compressed="yes"
+             InstallScope="perMachine"
+             Manufacturer="codilizer@aol.com"
+             Description="Install package for Visuallica"
+             Keywords="Visuallica"
+             Comments="Visuallica is a free software." 
+             />
+    <WixVariable Id="WixUILicenseRtf" Value="eula_Visuallica.rtf" />
+    <!-- InstallerVersion이 4.5라면 405로 입력한다 -->
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes"></MediaTemplate>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.ProgramFilesFolder)">
+        <!--x64윈도우에서 ProgramFilesFolder 지정시 Program Files (x86)에 설치됨-->
+        <Directory Id="INSTALLFOLDER" Name="Visuallica">
+          <!--실제 설치될 루트 디렉토리-->
+          <Directory Id="DIR_IMAGEFORMATS" Name="imageformats" />
+          <Directory Id="DIR_PLATFORMS" Name="platforms" />
+          <!--<Directory Id="CONFIG_DIR" Name="Config" />-->
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="MyShortcutsDir"
+                   Name="Visuallica" />
+      </Directory>
+    </Directory>
+    <Property Id="MyProperty" Value="some value"/>
+    <Feature Id="PF_VISUALLICA" Title="Image Viewer" Level="1">
+      <ComponentRef Id="CMP_VISUALLICA_EXE" />
+      <ComponentGroupRef Id="CG_VISUALLICA"/>
+      <!--<ComponentRef Id="testComponent" />-->
+      <Condition Level="100">
+        <!--<![CDATA[NOT REMOVE = "ALL" AND MyProperty = "some value"]]>-->
+        <![CDATA[installed = "1"]]>
+      </Condition>
+
+    </Feature>
+    <!--<Feature Id="PF_DBCONFIG" Title="DB Configuration" Level="1">
+      --><!--<ComponentRef Id="CMP_DocumentationShortcut" /> --><!--
+      <ComponentRef Id="testComponent" />
+      <ComponentRef Id="CMP_SQL_DENTAL_DB" />
+      <Condition Level="100">
+        --><!--<![CDATA[NOT REMOVE = "ALL" AND MyProperty = "some value"]]>--><!--
+        <![CDATA[installed = "1"]]>
+      </Condition>
+
+    </Feature>-->
+
+    <!--UI-->
+    <!--<UIRef Id="WixUI_FeatureTree"/>-->
+    <UIRef Id="WixUI_Minimal"/>
+  </Product>
+
+  <Fragment>
+    <!--<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">-->
+    <!--<Icon Id="sample.ico" SourceFile="sample.ico"/>-->
+    <!--<Binary Id="BinSqlDENTAL_DB" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_DENTAL_DB.sql"></Binary>
+    <Binary Id="BinSqlTblPatient" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_PATIENT.sql"></Binary>
+    <Binary Id="BinSqlTblPortrait" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_PORTRAIT.sql"></Binary>
+    <Binary Id="BinSqlTblImage" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_IMAGE.sql"></Binary>
+    <Binary Id="BinSqlTblAccount" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_ACCOUNT.sql"></Binary>
+    <Binary Id="BinSqlTblEquipment" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_EQUIPMENT.sql"></Binary>-->
+
+    <!--<util:User Id="DentallicaUser" Name="sa" Password="2014"></util:User>-->
+    <Icon Id="ICON_MAIN" SourceFile="Main.ico"/>
+    <ComponentGroup Id="CG_VISUALLICA">
+      <ComponentRef Id="CMP_VISUALLICA_SHORTCUT"/>
+      <ComponentRef Id="CMP_QWINDOWS_DLL"/>
+
+      <ComponentRef Id="CMP_QDDS_DLL"/>
+      <ComponentRef Id="CMP_QGIF_DLL"/>
+      <ComponentRef Id="CMP_QICNS_DLL"/>
+      <ComponentRef Id="CMP_QICO_DLL"/>
+      <ComponentRef Id="CMP_QJP2_DLL"/>
+      <ComponentRef Id="CMP_QJPEG_DLL"/>
+      <ComponentRef Id="CMP_QMNG_DLL"/>
+      <ComponentRef Id="CMP_QSVG_DLL"/>
+      <ComponentRef Id="CMP_QTGA_DLL"/>
+      <ComponentRef Id="CMP_QTIFF_DLL"/>
+      <ComponentRef Id="CMP_QWBMP_DLL"/>
+      <ComponentRef Id="CMP_QWEBP_DLL"/>
+      
+
+      <ComponentRef Id="CMP_D3DCOMPILER_47_DLL"/>
+      <ComponentRef Id="CMP_DCMTK_DLL"/>
+      <ComponentRef Id="CMP_ICUDT52_DLL"/>
+      <ComponentRef Id="CMP_ICUIN52_DLL"/>
+      <ComponentRef Id="CMP_ICUUC52_DLL"/>
+      <ComponentRef Id="CMP_LIBEGL_DLL"/>
+      <ComponentRef Id="CMP_LIBGLESV2_DLL"/>
+      <ComponentRef Id="CMP_QT5CORE_DLL"/>
+      <ComponentRef Id="CMP_QT5GUI_DLL"/>
+      <ComponentRef Id="CMP_QT5WIDGETS_DLL"/>
+      <ComponentRef Id="CMP_MSVCP120_DLL"/>
+      <ComponentRef Id="CMP_MSVCR120_DLL"/>
+      <ComponentRef Id="CMP_QWINDOWS_DLL"/>
+      <ComponentRef Id="CMP_VISUALLICA_EXE"/>
+    </ComponentGroup>
+    <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+    <!-- <Component Id="ProductComponent"> -->
+    <!-- TODO: Insert files, registry keys, and other resources here. -->
+    <!-- </Component> -->
+
+    <DirectoryRef Id="MyShortcutsDir">
+      <Component Id="CMP_VISUALLICA_SHORTCUT"
+                 Guid="1BC7E760-6800-4F33-AD9B-3DEC111849A6">
+        <CreateFolder></CreateFolder>
+
+        <Shortcut Id="DocumentationStartMenuShortcut"
+                  Name="Visuallica"
+                  Description="Image Viewer"
+                  Target="[INSTALLFOLDER]Visuallica.exe"
+                  Icon="ICON_MAIN"/>
+
+        <!--이코드를 넣으면 시작-프로그램폴더에 언인스톨 숏컷이 생긴다-->
+        <!--하지만 이 숏컷으로 언인스톨시 프로그램/피쳐의-->
+        <!--부트스트래퍼 항목은 삭제되지 않고 남아있는 관계로 주석처리-->
+        <Shortcut Id="UninstallShortcut"
+                    Name="Uninstall Visuallica"
+                    Description="Uninstall Visuallica"
+                    Target="[$(var.SystemDir)]msiexec.exe"
+                    Arguments="/x [ProductCode]" />
+
+
+        <RemoveFolder Id="RemoveMyShortcutsDir"
+                      On="uninstall"/>
+
+        <RegistryValue Root="HKCU"
+                       Key="Software\Visuallica\Image Viewer"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- platforms dll -->
+    
+    <DirectoryRef Id="DIR_PLATFORMS">
+      <Component Id="CMP_QWINDOWS_DLL"
+                 Guid="DB20CD65-8377-4365-88B0-6894A400238D">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QWINDOWS_DLL"
+              Source="$(var.SourceDir)bin\\platforms\\qwindows.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!--image format 시작 -->
+    
+    <DirectoryRef Id="DIR_IMAGEFORMATS">
+      <Component Id="CMP_QDDS_DLL"
+                 Guid="DAD51556-464F-4A01-AF70-A767CCE14E37">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QDDS_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qdds.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QGIF_DLL"
+                 Guid="B1F89625-31C2-47F5-B304-6FF0EF7E3334">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QGIF_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qgif.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QICNS_DLL"
+                 Guid="312B7C12-81F4-4838-8475-CE3366C4D8A5">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QICNS_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qicns.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QICO_DLL"
+                 Guid="AA1DC4DA-0354-4C04-820B-8EDABDB76BD2">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QICO_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qico.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QJP2_DLL"
+                 Guid="038925DB-1B8C-46A7-B591-680846E621B2">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QJP2_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qjp2.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QJPEG_DLL"
+                 Guid="5911D7F6-DC4F-428C-8905-2A58EA8B5789">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QJPEG_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qjpeg.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QMNG_DLL"
+                 Guid="18AC321B-768C-4306-B155-B5DD32BF3D7B">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QMNG_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qmng.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QSVG_DLL"
+                 Guid="2EABEACB-8BBA-4727-A98B-B54583F4AFC0">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QSVG_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qsvg.dll"
+              KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_QTGA_DLL"
+                 Guid="1826D2B6-CE82-4FAB-AC43-F1164513BB28">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QTGA_DLL"
+              Source="$(var.SourceDir)bin\\imageformats\\qtga.dll"
+              KeyPath="yes" />
+      </Component>
+
+        <Component Id="CMP_QTIFF_DLL"
+                   Guid="9E6E673E-BEB7-4035-99A5-5F83AF9911B8">
+          <CreateFolder></CreateFolder>
+          <File Id="FILE_QTIFF_DLL"
+                Source="$(var.SourceDir)bin\\imageformats\\qtiff.dll"
+                KeyPath="yes" />
+        </Component>
+
+        <Component Id="CMP_QWBMP_DLL"
+                   Guid="36175F76-F24C-4E20-9F0F-3F32804CBDC3">
+          <CreateFolder></CreateFolder>
+          <File Id="FILE_QWBMP_DLL"
+                Source="$(var.SourceDir)bin\\imageformats\\qwbmp.dll"
+                KeyPath="yes" />
+        </Component>
+
+        <Component Id="CMP_QWEBP_DLL"
+                   Guid="2BF8BCCE-467B-43FA-B6D5-990FA0AE3743">
+          <CreateFolder></CreateFolder>
+          <File Id="FILE_QWEBP_DLL"
+                Source="$(var.SourceDir)bin\\imageformats\\qwebp.dll"
+                KeyPath="yes" />
+        </Component>
+      </DirectoryRef>
+    
+    <!-- image format 끝  -->    
+    
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_D3DCOMPILER_47_DLL"
+                 Guid="48AB7BB8-D79D-42D7-9C49-1DB50644350B">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_D3DCOMPILER_47_DLL"
+              Source="$(var.SourceDir)bin\\d3dcompiler_47.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_DCMTK_DLL"
+                 Guid="1A65506B-635B-4B50-B586-CEE3E215A9EB">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_DCMTK_DLL"
+              Source="$(var.SourceDir)bin\\dcmtk.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_ICUDT52_DLL"
+                 Guid="D222CD0A-AF58-4273-9F6D-08E5FA0A5059">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_ICUDT52_DLL"
+              Source="$(var.SourceDir)bin\\icudt52.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_ICUIN52_DLL"
+                 Guid="88B074E8-D9D1-44EA-8239-6C6056A02DBE">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_ICUIN52_DLL"
+              Source="$(var.SourceDir)bin\\icuin52.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_ICUUC52_DLL"
+                 Guid="92D6C39D-9067-4D76-A913-63E9C7C9956B">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_ICUUC52_DLL"
+              Source="$(var.SourceDir)bin\\icuuc52.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_LIBEGL_DLL"
+                 Guid="8879E72A-7974-4F74-B9E3-644ABA615935">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_LIBEGL_DLL"
+              Source="$(var.SourceDir)bin\\libEGL.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_LIBGLESV2_DLL"
+                 Guid="933634EB-73FE-413C-8BE4-D8E3FD50DF81">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_LIBGLESV2_DLL"
+              Source="$(var.SourceDir)bin\\libGLESv2.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_QT5CORE_DLL"
+                 Guid="3D3411B9-FD03-4CCB-8B09-E064FC8C764E">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QT5CORE_DLL"
+              Source="$(var.SourceDir)bin\\Qt5Core.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_QT5GUI_DLL"
+                 Guid="CE7B8A5A-CE21-4586-B36B-CCC65B45B5C0">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QT5GUI_DLL"
+              Source="$(var.SourceDir)bin\\Qt5Gui.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_QT5WIDGETS_DLL"
+                 Guid="7C17675D-DD97-4658-A97C-956F3F8B77CF">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_QT5WIDGETS_DLL"
+              Source="$(var.SourceDir)bin\\Qt5Widgets.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_MSVCP120_DLL"
+                 Guid="6472AFBA-49C1-46DD-9F52-C3FF0F6120B6">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_MSVCP120_DLL"
+              Source="$(var.SourceDir)bin\\msvcp120.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_MSVCR120_DLL"
+                 Guid="BE6D3C44-91BD-4F02-9B1F-D0363B71F55E">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_MSVCR120_DLL"
+              Source="$(var.SourceDir)bin\\msvcr120.dll"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_VISUALLICA_EXE"
+                 Guid="6C2AE02E-A0B2-4B30-A5C8-F19867D5F118">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_VISUALLICA_EXE"
+              Source="$(var.SourceDir)bin\\Visuallica.exe"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+  </Fragment>
+</Wix>

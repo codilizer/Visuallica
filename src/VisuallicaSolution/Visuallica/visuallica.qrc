@@ -1,0 +1,29 @@
+<RCC>
+  <qresource prefix="Icons">
+    <file>Resources/Icons/IconFullScreen_128.png</file>
+    <file>Resources/Icons/IconMultiView_128.png</file>
+    <file>Resources/Icons/IconMatrixRestore.png</file>
+    <file>Resources/Icons/IconRotateLeft_128.png</file>
+    <file>Resources/Icons/IconRotateRight_128.png</file>
+    <file>Resources/Icons/WindowLevel_128.png</file>
+    <file>Resources/Icons/IconReverseHorizontal.ico</file>
+    <file>Resources/Icons/IconReverseVertical.ico</file>
+    <file>Resources/Icons/IconiArrow_128.png</file>
+    <file>Resources/Icons/IconConfig_128.png</file>
+    <file>Resources/Icons/IconExpand_128.png</file>
+    <file>Resources/Icons/IconHandGrab_128.png</file>
+    <file>Resources/Icons/IconOriginalFit_128.png</file>
+    <file>Resources/Icons/IconZoom_128.png</file>
+    <file>Resources/Icons/Main.ico</file>
+  </qresource>
+  <qresource prefix="Qss">
+    <file>Resources/qss/darkorange.stylesheet</file>
+    <file>Resources/qss/darkstyle.qss</file>
+    <file>Resources/qss/QTDark.stylesheet</file>
+    <file>Resources/qss/images/checkbox.png</file>
+    <file>Resources/qss/images/checkbox_checked.png</file>
+    <file>Resources/qss/images/down_arrow.png</file>
+    <file>Resources/qss/images/handle.png</file>
+    <file>Resources/qss/darkViolet.stylesheet</file>
+  </qresource>
+</RCC>

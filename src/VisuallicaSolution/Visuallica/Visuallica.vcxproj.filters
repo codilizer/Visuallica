@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{b9ad5d9c-65ef-4c65-ba9d-68def7f70021}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{8f32d766-f98b-49e6-b907-abe8e1f2bec9}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Source Files\Base">
+      <UniqueIdentifier>{cfc64158-d8e7-452e-88d7-082da3a4ce0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{53bbebc4-7163-4c44-aaaa-e4e5b2c34740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{24a833d5-f7b7-4462-9202-abfebc476502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Thread">
+      <UniqueIdentifier>{3532297f-2ddc-4e65-bee5-19eee723239e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Base">
+      <UniqueIdentifier>{7dbf6636-8397-4f9e-935c-9ba8d91ffee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{bd31856d-aa06-4892-8737-a3fd44718816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{691b229e-5699-4ed7-9efa-9be8f361d2b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Thread">
+      <UniqueIdentifier>{c1b51bc7-3086-4cef-b9a5-276ed06c5936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Manager">
+      <UniqueIdentifier>{174f5a3e-6775-453f-9e6b-2933f3ee8322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Manager">
+      <UniqueIdentifier>{33ca2ad6-d351-4977-b51f-e0fbabf44bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{b655e2ee-c62c-4aca-9661-af27cdcfca28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{f65d2b0e-6ca8-4b10-8617-1b3735a2ad88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pixmap">
+      <UniqueIdentifier>{5905f562-5774-4b9b-b309-1f0e45e46042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pixmap">
+      <UniqueIdentifier>{f7f87c44-d62b-4d35-8dad-1667dd4caefd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Define">
+      <UniqueIdentifier>{445e41d9-82e6-4a10-8420-274b11faedc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dialog">
+      <UniqueIdentifier>{06a95d17-0da4-4aae-a8af-7d6c894084c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialog">
+      <UniqueIdentifier>{018791ef-80bd-42a0-906a-f2231e9a62d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Version">
+      <UniqueIdentifier>{67d30efc-81b7-4431-846d-574950e57fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files\DebugStatic">
+      <UniqueIdentifier>{9d5d9629-a32c-454d-b32a-c2ee4f8f23f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files\ReleaseStatic">
+      <UniqueIdentifier>{381a5436-7e6c-4e40-89d2-a01514f92530}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="visuallica.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_visuallica.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Subject.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ThumbnailsModel.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread\ImageViewThread.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread\ImageViewWorker.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread\ThumbnailThread.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread\ThumbnailWorker.cpp">
+      <Filter>Source Files\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\BGraphicsScene.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\BGraphicsView.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\FileExplorer.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\GraphicsViewContainer.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ThumbnailView.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\StateManager.cpp">
+      <Filter>Source Files\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\BDcm.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ThumbnailProgressBar.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\ThumbnailProgressManager.cpp">
+      <Filter>Source Files\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Pixmap\DcmPixmap.cpp">
+      <Filter>Source Files\Pixmap</Filter>
+    </ClCompile>
+    <ClCompile Include="Pixmap\ImagePixmap.cpp">
+      <Filter>Source Files\Pixmap</Filter>
+    </ClCompile>
+    <ClCompile Include="Pixmap\BPixmap.cpp">
+      <Filter>Source Files\Pixmap</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\MultiViewSelectDialog.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\MultiViewSelectTableView.cpp">
+      <Filter>Source Files\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\MultiViewManager.cpp">
+      <Filter>Source Files\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_visuallica.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_visuallica.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_visuallica.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_visuallica.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ThumbnailWorker.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ThumbnailWorker.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ThumbnailWorker.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ThumbnailWorker.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ThumbnailView.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ThumbnailView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ThumbnailView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ThumbnailView.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ThumbnailThread.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ThumbnailThread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ThumbnailThread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ThumbnailThread.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ThumbnailsModel.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ThumbnailsModel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ThumbnailsModel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ThumbnailsModel.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ThumbnailProgressBar.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ThumbnailProgressBar.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ThumbnailProgressBar.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ThumbnailProgressBar.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_StateManager.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_StateManager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_StateManager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_StateManager.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_MultiViewSelectTableView.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MultiViewSelectTableView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MultiViewSelectTableView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_MultiViewSelectTableView.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_MultiViewSelectDialog.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MultiViewSelectDialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MultiViewSelectDialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_MultiViewSelectDialog.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_MultiViewManager.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MultiViewManager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MultiViewManager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_MultiViewManager.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ImageViewWorker.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ImageViewWorker.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ImageViewWorker.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ImageViewWorker.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_ImageViewThread.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ImageViewThread.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ImageViewThread.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_ImageViewThread.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_GraphicsViewContainer.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_GraphicsViewContainer.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_GraphicsViewContainer.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_GraphicsViewContainer.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_FileExplorer.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_FileExplorer.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_FileExplorer.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_FileExplorer.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\ReleaseStatic\moc_BGraphicsView.cpp">
+      <Filter>Generated Files\ReleaseStatic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_BGraphicsView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_BGraphicsView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\DebugStatic\moc_BGraphicsView.cpp">
+      <Filter>Generated Files\DebugStatic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="visuallica.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="visuallica.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="visuallica.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Model\ThumbnailsModel.h">
+      <Filter>Header Files\Model</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Thread\ImageViewThread.h">
+      <Filter>Header Files\Thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Thread\ImageViewWorker.h">
+      <Filter>Header Files\Thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Thread\ThumbnailThread.h">
+      <Filter>Header Files\Thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Thread\ThumbnailWorker.h">
+      <Filter>Header Files\Thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UI\BGraphicsView.h">
+      <Filter>Header Files\UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UI\FileExplorer.h">
+      <Filter>Header Files\UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UI\GraphicsViewContainer.h">
+      <Filter>Header Files\UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UI\ThumbnailView.h">
+      <Filter>Header Files\UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Manager\StateManager.h">
+      <Filter>Header Files\Manager</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UI\ThumbnailProgressBar.h">
+      <Filter>Header Files\UI</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Dialog\MultiViewSelectDialog.h">
+      <Filter>Header Files\Dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Dialog\MultiViewSelectTableView.h">
+      <Filter>Header Files\Dialog</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Manager\MultiViewManager.h">
+      <Filter>Header Files\Manager</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_visuallica.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Observer.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Subject.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BGraphicsScene.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\BDcm.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\ThumbnailProgressManager.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Pixmap\DcmPixmap.h">
+      <Filter>Header Files\Pixmap</Filter>
+    </ClInclude>
+    <ClInclude Include="Pixmap\ImagePixmap.h">
+      <Filter>Header Files\Pixmap</Filter>
+    </ClInclude>
+    <ClInclude Include="Pixmap\BPixmap.h">
+      <Filter>Header Files\Pixmap</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\ResourceDefines.h">
+      <Filter>Header Files\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Define\CommonDefines.h">
+      <Filter>Header Files\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\Version\resource.h">
+      <Filter>Resource Files\Version</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\Version\Resource.rc">
+      <Filter>Resource Files\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

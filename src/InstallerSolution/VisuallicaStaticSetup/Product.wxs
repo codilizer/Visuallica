@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+  xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <!--xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension"-->
+
+  <Product Id="*"
+           Name="Visuallica (Image Viewer)"
+           Language="1033"
+           Version="0.2.1.0"
+           Manufacturer="codilizer@aol.com"
+           UpgradeCode="7B6D08CD-4CA1-4E6C-B351-7919478E90F5">
+    <!--Product ID는 *로 해놓으면 컴파일할 때 자동으로 GUID로 치환됨-->
+    <!--언어코드는 http://msdn.microsoft.com/en-us/goglobal/bb964664.aspx 참고-->
+    <!--InstallerVersion은 64비트 패키지일경우 반드시 200 이상이어야 한다 -->
+    <Package InstallerVersion="200"
+             Compressed="yes"
+             InstallScope="perMachine"
+             Manufacturer="codilizer@aol.com"
+             Description="Install package for Visuallica"
+             Keywords="Visuallica"
+             Comments="Visuallica is a free software."
+             />
+    <WixVariable Id="WixUILicenseRtf" Value="eula_Visuallica.rtf" />
+    <!-- InstallerVersion이 4.5라면 405로 입력한다 -->
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes"></MediaTemplate>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.ProgramFilesFolder)">
+        <!--x64윈도우에서 ProgramFilesFolder 지정시 Program Files (x86)에 설치됨-->
+        <Directory Id="INSTALLFOLDER" Name="Visuallica">
+          <!--실제 설치될 루트 디렉토리-->
+          <!--<Directory Id="DIR_IMAGEFORMATS" Name="imageformats" />-->
+          <!--<Directory Id="DIR_PLATFORMS" Name="platforms" />-->
+          <!--<Directory Id="CONFIG_DIR" Name="Config" />-->
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="MyShortcutsDir"
+                   Name="Visuallica" />
+      </Directory>
+    </Directory>
+    <Property Id="MyProperty" Value="some value"/>
+    <Feature Id="PF_VISUALLICA" Title="Image Viewer" Level="1">
+      <ComponentRef Id="CMP_VISUALLICA_EXE" />
+      <ComponentGroupRef Id="CG_VISUALLICA"/>
+      <!--<ComponentRef Id="testComponent" />-->
+      <Condition Level="100">
+        <!--<![CDATA[NOT REMOVE = "ALL" AND MyProperty = "some value"]]>-->
+        <![CDATA[installed = "1"]]>
+      </Condition>
+
+    </Feature>
+    <!--<Feature Id="PF_DBCONFIG" Title="DB Configuration" Level="1">
+      -->
+    <!--<ComponentRef Id="CMP_DocumentationShortcut" /> -->
+    <!--
+      <ComponentRef Id="testComponent" />
+      <ComponentRef Id="CMP_SQL_DENTAL_DB" />
+      <Condition Level="100">
+        -->
+    <!--<![CDATA[NOT REMOVE = "ALL" AND MyProperty = "some value"]]>-->
+    <!--
+        <![CDATA[installed = "1"]]>
+      </Condition>
+
+    </Feature>-->
+
+    <!--UI-->
+    <!--<UIRef Id="WixUI_FeatureTree"/>-->
+    <UIRef Id="WixUI_Minimal"/>
+  </Product>
+
+  <Fragment>
+    <!--<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">-->
+    <!--<Icon Id="sample.ico" SourceFile="sample.ico"/>-->
+    <!--<Binary Id="BinSqlDENTAL_DB" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_DENTAL_DB.sql"></Binary>
+    <Binary Id="BinSqlTblPatient" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_PATIENT.sql"></Binary>
+    <Binary Id="BinSqlTblPortrait" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_PORTRAIT.sql"></Binary>
+    <Binary Id="BinSqlTblImage" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_IMAGE.sql"></Binary>
+    <Binary Id="BinSqlTblAccount" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_ACCOUNT.sql"></Binary>
+    <Binary Id="BinSqlTblEquipment" SourceFile="..\\..\\DentallicaSolution\\Dentallica\\SQLFiles\\CREATE_TABLE_EQUIPMENT.sql"></Binary>-->
+
+    <!--<util:User Id="DentallicaUser" Name="sa" Password="2014"></util:User>-->
+    <Icon Id="ICON_MAIN" SourceFile="Main.ico"/>
+    <ComponentGroup Id="CG_VISUALLICA">
+      <ComponentRef Id="CMP_VISUALLICA_SHORTCUT"/>
+      <ComponentRef Id="CMP_VISUALLICA_EXE"/>
+    </ComponentGroup>
+    <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+    <!-- <Component Id="ProductComponent"> -->
+    <!-- TODO: Insert files, registry keys, and other resources here. -->
+    <!-- </Component> -->
+
+    <DirectoryRef Id="MyShortcutsDir">
+      <Component Id="CMP_VISUALLICA_SHORTCUT"
+                 Guid="1BC7E760-6800-4F33-AD9B-3DEC111849A6">
+        <CreateFolder></CreateFolder>
+
+        <Shortcut Id="DocumentationStartMenuShortcut"
+                  Name="Visuallica"
+                  Description="Image Viewer"
+                  Target="[INSTALLFOLDER]Visuallica.exe"
+                  Icon="ICON_MAIN"/>
+
+        <!--이코드를 넣으면 시작-프로그램폴더에 언인스톨 숏컷이 생긴다-->
+        <!--하지만 이 숏컷으로 언인스톨시 프로그램/피쳐의-->
+        <!--부트스트래퍼 항목은 삭제되지 않고 남아있는 관계로 주석처리-->
+        <Shortcut Id="UninstallShortcut"
+                    Name="Uninstall Visuallica"
+                    Description="Uninstall Visuallica"
+                    Target="[$(var.SystemDir)]msiexec.exe"
+                    Arguments="/x [ProductCode]" />
+
+
+        <RemoveFolder Id="RemoveMyShortcutsDir"
+                      On="uninstall"/>
+
+        <RegistryValue Root="HKCU"
+                       Key="Software\Visuallica\Image Viewer"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="CMP_VISUALLICA_EXE"
+                 Guid="6C2AE02E-A0B2-4B30-A5C8-F19867D5F118">
+        <CreateFolder></CreateFolder>
+        <File Id="FILE_VISUALLICA_EXE"
+              Source="$(var.SourceDir)bin\\Visuallica.exe"
+              KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+  </Fragment>
+</Wix>
